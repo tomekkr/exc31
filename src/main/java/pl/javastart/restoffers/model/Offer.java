@@ -1,5 +1,7 @@
 package pl.javastart.restoffers.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 
 @Entity
@@ -16,6 +18,7 @@ public class Offer {
 
     private double price;
 
+    @JsonManagedReference
     @ManyToOne
     private Category category;
 

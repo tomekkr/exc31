@@ -1,5 +1,7 @@
 package pl.javastart.restoffers.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
@@ -14,6 +16,7 @@ public class Category {
 
     private String description;
 
+    @JsonBackReference
     @OneToMany(mappedBy = "category")
     private Set<Offer> offers = new HashSet<>();
 
