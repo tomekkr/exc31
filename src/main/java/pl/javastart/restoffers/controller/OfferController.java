@@ -5,9 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import pl.javastart.restoffers.Repository.CategoryRepository;
 import pl.javastart.restoffers.Repository.OfferRepository;
-import pl.javastart.restoffers.model.Category;
 import pl.javastart.restoffers.model.Offer;
 
 import java.util.List;
