@@ -11,4 +11,6 @@ public interface OfferRepository extends JpaRepository<Offer, Long> {
     List<Offer> findAll();
 
     Integer countAllBy();
+
+    List<Offer> findByTitleContainsIgnoreCase(String title);
 }
