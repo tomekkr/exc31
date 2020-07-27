@@ -69,16 +69,4 @@ public class Offer {
     public void setCategory(Category category) {
         this.category = category;
     }
-
-    @Override
-    public String toString() {
-        return "Offer{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", description='" + description + '\'' +
-                ", imgUrl='" + imgUrl + '\'' +
-                ", price=" + price +
-                ", category=" + category +
-                '}';
-    }
 }

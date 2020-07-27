@@ -2,6 +2,7 @@ package pl.javastart.restoffers.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import pl.javastart.restoffers.Repository.CategoryRepository;
@@ -14,12 +15,10 @@ import java.util.List;
 @RestController
 public class OfferController {
     private final OfferRepository offerRepository;
-    private final CategoryRepository categoryRepository;
 
     @Autowired
-    public OfferController(OfferRepository offerRepository, CategoryRepository categoryRepository) {
+    public OfferController(OfferRepository offerRepository) {
         this.offerRepository = offerRepository;
-        this.categoryRepository = categoryRepository;
     }
 
     @GetMapping("api/offers/count")
@@ -36,10 +35,9 @@ public class OfferController {
         }
     }
 
-    @GetMapping("/api/categories")
-    public List<Category> getAllCategories() {
-        return categoryRepository.findAll();
+    @GetMapping("api/offers/{id}")
+    public Offer getOffer(@PathVariable Long id) {
+        return offerRepository.getById(id);
     }
-
 
 }
