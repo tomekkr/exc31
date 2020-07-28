@@ -1,44 +1,24 @@
-package pl.javastart.restoffers.model;
+package pl.javastart.restoffers.form;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import pl.javastart.restoffers.model.Category;
 
-import javax.persistence.*;
 
-@Entity
-public class Offer {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
+public class OfferForm {
     private String title;
-
     private String description;
-
     private String imgUrl;
-
     private double price;
-
-    @JsonManagedReference
-    @ManyToOne
     private Category category;
 
-//    public Offer(String title, String description, String imgUrl, double price, Category category) {
-//        this.title = title;
-//        this.description = description;
-//        this.imgUrl = imgUrl;
-//        this.price = price;
-//        this.category = category;
-//    }
-
-    public Offer() {
+    public OfferForm(String title, String description, String imgUrl, double price, Category category) {
+        this.title = title;
+        this.description = description;
+        this.imgUrl = imgUrl;
+        this.price = price;
+        this.category = category;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
+    public OfferForm() {
     }
 
     public String getTitle() {

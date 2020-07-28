@@ -26,10 +26,15 @@ public class CategoryController {
         return categoryRepository.findAll();
     }
 
-    @GetMapping("/api/categories/{id}")
-    public int getOffersNumber(@PathVariable Long id) {
-        Category category = categoryRepository.getCategoryById(id);
-        Set<Offer> offers = category.getOffers();
-        return offers.size();
+    @GetMapping("/api/categories/names")
+    public Set<String> getAllCategoriesNames() {
+        return categoryRepository.getCategoriesNames();
     }
-}
+
+//    @GetMapping("/api/categories/{id}")
+//    public int getOffersNumber(@PathVariable Long id) {
+//        Category category = categoryRepository.getCategoryById(id);
+//        Set<Offer> offers = category.getOffers();
+//        return offers.size();
+//    }
+    }
